@@ -2,6 +2,11 @@
 import express from "express";
 import path from "path"
 import { ENV } from "./lib/env.js";
+import { connectDB } from "./lib/db.js";
+import dns from "dns";
+// Change DNS
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
+
    
 const app = express();
 
@@ -23,5 +28,13 @@ if(ENV.NODE_ENV === "production"){
         res.sendFile(path.join(__dirname,"../frontend", "dist", "index.html"));
     });
 }
+const startServer = async () => {
+    try {
+        await connectDB(); 
+        app.listen(ENV.PORT, async () => console.log("Server is running on port:", ENV.PORT));
+    } catch (error) {
+        console.error("Error starting server:", error);
+    }
+    };
 
-app.listen(ENV.PORT, () => console.log("Server is running on port:", ENV.PORT)); 
+    startServer();
