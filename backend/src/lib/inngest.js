@@ -6,8 +6,7 @@ import User from "../models/User.js";
 export const inngest = new Inngest({ id: "Intervix" });
 
 const syncUser = inngest.createFunction(
-    { id: "sync-user" },
-    {event:"clerk/user.created"},
+    { id: "sync-user", event: "clerk/user.created"},
     async ({ event }) => {
         await connectDB();
 
@@ -26,8 +25,7 @@ const syncUser = inngest.createFunction(
 );
 
 const deleteUserFromDB = inngest.createFunction(
-    { id: "delete-user-from-db" },
-    {event:"clerk/user.deleted"},
+    { id: "delete-user-from-db", event: "clerk/user.deleted" },
     async ({ event }) => {
         await connectDB();
 
