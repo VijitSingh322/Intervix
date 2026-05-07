@@ -11,6 +11,7 @@ import { inngest, functions} from "./lib/inngest.js";
 import dns from "dns";
 
 import chatRoutes from "./routes/chatRoutes.js";
+import sessionRoutes from "./routes/sessionRoutes.js";
 // Change DNS
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
@@ -27,6 +28,7 @@ app.use(clerkMiddleware()); //this add auth will to the request object: req.auth
 
 app.use("/api/inngest", serve({client:inngest, functions}));
 app.use("/api/chat", chatRoutes);
+app.use("/api/sessions", sessionRoutes);
 
 app.get("/health", (req,res) => {
     res.status(200).json({msg:"api is up and running"});
