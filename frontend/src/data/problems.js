@@ -52,7 +52,7 @@ print(twoSum([3, 2, 4], 6))  # Expected: [1, 2]
 print(twoSum([3, 3], 6))  # Expected: [0, 1]`,
       java: `import java.util.*;
 
-class Solution {
+class Main {
     public static int[] twoSum(int[] nums, int target) {
         // Write your solution here
         
