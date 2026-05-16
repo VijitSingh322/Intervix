@@ -123,11 +123,11 @@ function HomePage() {
             {/* STATS */}
             <div className="stats stats-vertical lg:stats-horizontal bg-base-100 shadow-lg">
               <div className="stat">
-                <div className="stat-value text-primary">500+</div>
-                <div className="stat-title">Challenges</div>
+                <div className="stat-value text-primary">Free</div>
+                <div className="stat-title"> Interviews</div>
               </div>
               <div className="stat">
-                <div className="stat-value text-secondary">10+</div>
+                <div className="stat-value text-secondary"> 5+</div>
                 <div className="stat-title">Languages</div>
               </div>
               <div className="stat">
